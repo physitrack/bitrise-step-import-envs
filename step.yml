@@ -1,0 +1,35 @@
+title: |-
+  import envs
+summary: |
+  Import environment variables from file and share between bitrise steps.
+description: |
+  This step allows you to load environment variables from .env file and share them between other steps in bitrise.yml.
+website: https://github.com/physitrack/bitrise-step-import-envs
+source_code_url: https://github.com/physitrack/bitrise-step-import-envs
+support_url: https://github.com/physitrack/bitrise-step-import-envs/issues
+
+type_tags:
+  - utility
+
+is_always_run: false
+is_skippable: true
+run_if: ""
+
+
+
+toolkit:
+  bash:
+    entry_file: step.sh
+
+
+inputs:
+  - env_file_path:
+    opts:
+      title: "Path of the .env file."
+      summary: |
+        Path of the .env file which will be used to import variables.
+      is_expand: true
+      is_required: true
+      value_options: []
+
+outputs:
